@@ -4,7 +4,12 @@
 
 #include <stdio.h>//input output sistema operativo libreria estandar
 #include <stdlib.h>//memoria sistema operativo malloc() y free() libreria estandar
-#include <unistd.h>//llamadas al sistema operativo libreria sistemas unix
+#include <time.h>
+/*
+Aca se demuestra la virtualizacion, creamos 4 tareas que siempre estan activas, el OS intercala cada
+tarea de una manera que todavia no sabemos, dando la impresion de que se ejecutan a la vez
+*/
+void spin(int seconds);
 
 int main (int argc, char *argv[]){
     if (argc != 2) {
@@ -15,10 +20,16 @@ int main (int argc, char *argv[]){
     }
     char *str = argv[1];
     while (1) {
-
-        sleep(1);//unistd.h
+        spin(1);
         printf("%s\n", str);//stdio.h, %s para strings
     }
     return 0;
     //to stop the program press ctrl+c
+}
+
+void spin(int seconds) {
+    time_t start = time(NULL);
+    while (time(NULL) - start < seconds) {
+        // busy wait (no hace nada)
+    }
 }
