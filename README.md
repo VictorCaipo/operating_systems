@@ -6,7 +6,7 @@
         Concurrency
         Persistane
     Virtualization:
-        The abstraction process
+        Process
         Process API
         Limited Direct Execution
         Scheduling - Introduction
