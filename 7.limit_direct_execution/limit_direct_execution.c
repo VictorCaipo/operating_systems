@@ -11,11 +11,12 @@ void run_process(process *p);
 
 int main(void){
 
-    process p1 = {1,5};
+    process p1 = {1,5};//nueva forma de inicializar
     process p2 = {2,3};
     process p3 = {3,4};
 
     while(p1.remaining_time > 0 || p2.remaining_time > 0 || p3.remaining_time > 0){
+        //este while ejecuta siempre que haya un proceso vivo
         run_process(&p1);
         run_process(&p2);
         run_process(&p3);
@@ -24,7 +25,6 @@ int main(void){
     }
 
     printf("All processes finished\n");
-
     return 0;
 }
 
@@ -34,7 +34,6 @@ void run_process(process *p){
         p->remaining_time--;
     }
 }
-
 
 /*
 Limited direct execution:
@@ -76,6 +75,5 @@ Limited direct execution:
     En resumen la virtualizacion del CPU se logra con varias herrami
     entas: user mode/ kernel mode, systems call, timer interrupts y
     context switching
-
 
 */
