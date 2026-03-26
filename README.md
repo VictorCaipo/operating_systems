@@ -18,13 +18,13 @@
 16. Replacement Policies
 ## Concurrency:
 17. Concurrency introduction
-Thread API
-Locks
-Condition Variables
-Semaphores
-Concurrency Bugs
+18. Thread API
+19. Locks
+20. Condition Variables
+21. Semaphores
+22. Concurrency Bugs
 ## Persistence:
-I/O Devices
-Files and Directories
-File System Implementation
-Flash-Based SSDs
+23. I/O Devices
+24. Files and Directories
+25. File System Implementation
+26. Flash-Based SSDs
